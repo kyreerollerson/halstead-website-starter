@@ -1,0 +1,150 @@
+.hws-footer {
+  background-color: $hw_color_black;
+  color: $hw_color_white;
+  position: relative;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+
+  &__logo-box {
+    text-align: center;
+
+    @include screen_lg_up() {
+      padding: 70px 24px;
+    }
+
+    @include screen_md_only() {
+      padding: 50px 24px;
+    }
+
+    @include screen_sm_down() {
+      padding: 40px 24px;
+    }
+
+    img {
+      width: auto;
+
+      @include screen_lg_up() {
+        height: 70px;
+      }
+  
+      @include screen_md_only() {
+        height: 50px;
+      }
+
+      @include screen_sm_down() {
+        height: 40px;
+      }
+      
+    }
+
+  }
+
+  &__columns {
+    border-top: 1px solid darken($hw_color_white, 75%);
+    border-bottom: 1px solid darken($hw_color_white, 75%);
+    padding: 60px 24px;
+
+    .hws-container--large {
+      display: flex;
+      column-gap: 24px;
+      row-gap: 48px;
+
+      @include screen_lg_up() {
+        flex-direction: row;
+      }
+  
+      @include screen_md_down() {
+        flex-direction: column;
+      }
+
+    }
+
+    &__single {
+
+      @include screen_lg_up() {
+        width: calc(33.33333% - 16px);
+      }
+  
+      @include screen_md_down() {
+        width: 100%;
+      }
+
+      h3 {
+
+        @include screen_lg_up() {
+          font-size: 1.25rem;
+        }
+
+        @include screen_md_down() {
+          font-size: 1rem;
+        }
+
+      }
+
+      p {
+        margin-bottom: 0;
+
+        @include screen_lg_up() {
+          font-size: 1.25rem;
+        }
+
+        @include screen_md_down() {
+          font-size: 1rem;
+        }
+
+        span {
+          display: block;
+        }
+
+        a {
+          text-decoration: none;
+          color: $hw_color_white !important;
+        }
+
+      }
+
+    }
+
+  }
+
+  &__copyright {
+    text-align: center;
+    
+    @include screen_lg_up() {
+      font-size: 1.25rem;
+      padding: 70px 24px;
+    }
+
+    @include screen_md_down() {
+      font-size: 1rem;
+      padding: 50px 24px;
+    }
+
+    a {
+      color: $hw_color_white !important;
+    }
+
+    &__colophon {
+      display: block;
+      width: auto;
+      margin-top: 30px;
+
+      @include screen_lg_up() {
+        height: 40px;
+      }
+  
+      @include screen_md_down() {
+        height: 30px;
+      }
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+
+    }
+
+  }
+
+}

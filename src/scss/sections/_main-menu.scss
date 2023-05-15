@@ -1,0 +1,223 @@
+#hws-main-menu {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  left: -100%;
+  overflow: hidden;
+
+  &__left {
+    position: relative;
+    height: 100vh;
+    padding: 110px 0 24px 0;
+    overflow: hidden;
+    background-image: url(../../images/backgrounds/left-panel.jpg);
+    background-size: cover;
+    background-position: right center;
+
+    @include screen_md_up() {
+      width: 50vw;
+    }
+
+    @include screen_sm_down() {
+      width: 100vw;
+    }
+
+    &__overlay {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+      opacity: 0;
+    }
+
+    .hws-header__nav > ul,
+    ul.hws-header__nav  {
+      list-style-type: none;
+      padding: 0;
+      z-index: 2;
+      position: relative;
+      text-align: right;
+      overflow-y: scroll;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      li {
+        margin-bottom: 1em;
+        transform: translateX(100%);
+        position: relative;
+        transition: opacity 0.5s ease;
+
+        @include screen_md_up() {
+          padding: 0 110px 0 24px;
+        }
+    
+        @include screen_sm_down() {
+          padding: 0 24px;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        a {
+          @include typography_capitalized();
+          color: $hw_color_white !important;
+          text-decoration: none !important;
+        }
+
+        .arrow {
+          height: 1.25em;
+          aspect-ratio: 1;
+          right: 3em;
+          display: inline-block;
+          background-image: url(../../images/icons/right-arrow-black.svg);
+          background-size: 0;
+          background-position: center;
+          background-repeat: no-repeat;
+          transform: translateY(-50%);
+          transform-origin: center center;
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          transition: opacity 0.25s ease, transform 0.25s ease, background-size 0.25s ease;
+          filter: invert(1);
+        }
+
+        &.activated {
+
+          .arrow {
+            background-size: 100% auto;
+            opacity: 1;
+
+            @include screen_sm_down() {
+              display: none;
+            }
+          }
+
+        }
+
+        &.deactivated {
+          opacity: 0.2;
+        }
+
+      }
+
+      .sub-menu {
+        font-size: 0;
+        padding: 0;
+        height: 0;
+        width: 0;
+      }
+
+    }
+
+  }
+
+  &__right {
+
+    @include screen_md_up() {
+      width: 50vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    @include screen_sm_down() {
+      width: 0;
+      height: 0;
+    }
+
+    ul {
+      background-color: $hw_color_black;
+      list-style-type: none;
+      width: 100%;
+      height: 100%;
+      padding: 110px 0 24px 0;
+      transition: transform 0.5s ease;
+      transform: translateX(-100%);
+      overflow-y: scroll;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      @include screen_sm_down() {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 999;
+      }
+
+      &.activated {
+        transform: translateX(0);
+      }
+
+      .arrow {
+        height: 30px;
+        aspect-ratio: 1;
+        display: inline-block;
+        background-image: url(../../images/icons/right-arrow-black.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 1em;
+        transform-origin: center center;
+        transform: rotate(180deg);
+        margin-left: 24px;
+        transition: opacity 0.25s ease, transform 0.25s ease, background-size 0.25s ease;
+        filter: invert(1);
+        background-size: 100% auto;
+        opacity: 1;
+
+        @include screen_md_up() {
+          display: none;
+        }
+        
+      }
+
+      h3 {
+        padding: 0 24px;
+        font-size: 1em !important;
+        color: rgba($hw_color_white, 0.35);
+
+        @include screen_md_up() {
+          display: none;
+        }
+
+      }
+
+      li {
+        margin-bottom: 1em;
+        padding: 0 24px 0 24px;
+        position: relative;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        a {
+          @include typography_capitalized();
+          color: $hw_color_white !important;
+          text-decoration: none !important;
+        }
+
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,140 @@
+.hws-pricing {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+
+  &__flex {
+    display: flex;
+    column-gap: 24px;
+    row-gap: 24px;
+    flex-wrap: nowrap;
+    flex-wrap: wrap;
+
+    &.hws-pricing__flex--count-1,
+    &.hws-pricing__flex--count-2 {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include screen_xl_up() {
+
+      &.hws-pricing__flex--count-4 .hws-pricing__flex__single {
+        width: calc(25% - 18px);
+      }
+
+      &.hws-pricing__flex--count-3 .hws-pricing__flex__single {
+        width: calc(33.33% - 16px);
+      }
+
+      &.hws-pricing__flex--count-2 .hws-pricing__flex__single {
+        width: calc(50% - 24px);
+      }
+
+      &.hws-pricing__flex--count-1 .hws-pricing__flex__single {
+        width: 100%;
+      }
+
+    }
+
+    @include screen_lg_only() {
+
+      &.hws-pricing__flex--count-4 .hws-pricing__flex__single,
+      &.hws-pricing__flex--count-3 .hws-pricing__flex__single {
+        width: calc(33.33% - 16px);
+      }
+
+      &.hws-pricing__flex--count-2 .hws-pricing__flex__single {
+        width: calc(50% - 24px);
+      }
+
+      &.hws-pricing__flex--count-1 .hws-pricing__flex__single {
+        width: 100%;
+      }
+
+    }
+
+      @include screen_md_only() {
+
+        &.hws-pricing__flex--count-4 .hws-pricing__flex__single,
+        &.hws-pricing__flex--count-3 .hws-pricing__flex__single,
+        &.hws-pricing__flex--count-2 .hws-pricing__flex__single {
+          width: calc(50% - 24px);
+        }
+
+        &.hws-pricing__flex--count-1 .hws-pricing__flex__single {
+          width: 100%;
+        }
+
+      }
+
+      @include screen_sm_only() {
+        
+        &.hws-pricing__flex--count-4 .hws-pricing__flex__single,
+        &.hws-pricing__flex--count-3 .hws-pricing__flex__single,
+        &.hws-pricing__flex--count-2 .hws-pricing__flex__single {
+          width: calc(50% - 24px);
+        }
+
+        &.hws-pricing__flex--count-1 .hws-pricing__flex__single {
+          width: 100%;
+        }
+
+      }
+
+      @include screen_xs_down() {
+        
+        .hws-pricing__flex__single {
+          width: 100%;
+        }
+
+      }
+
+    &__single {
+      background-color: $hw_color_black;
+      color: $hw_color_white;
+      padding: 24px;
+
+      &__title {
+        position: relative;
+      }
+    
+      &__price {
+        font-size: 3rem;
+        margin-bottom: 0;
+
+      
+        @include screen_md_up() {
+          font-size: 3rem;
+        }
+      
+        @include screen_sm_only() {
+          font-size: 2rem;
+        }
+      
+        @include screen_xs_down() {
+          font-size: 1.8rem;
+        }
+
+        span:last-of-type {
+          font-size: 0.4em;
+          letter-spacing: 0.2em;
+        }
+
+      }
+
+      p {
+        margin-bottom: 1em;
+        color: $hw_color_gray-light;
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+
+}

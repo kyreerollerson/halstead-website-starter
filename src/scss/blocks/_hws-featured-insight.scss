@@ -1,0 +1,228 @@
+.hws-featured-insight {
+
+  @include screen_sm_down() {
+    display: none;
+  }
+
+  .hws--vertical-center {
+    height: 100%;
+
+    @include screen_xl_up() {
+      max-height: 600px;
+    }
+
+    @include screen_lg_only() {
+      max-height: 500px;
+    }
+
+    @include screen_md_only() {
+      max-height: 400px;
+    }
+
+  }
+
+  &__flex {
+    display: flex;
+    column-gap: 0;
+    height: 100%;
+    overflow: hidden;
+    align-items: flex-start;
+
+    &__left,
+    &__right {
+      position: relative;
+    }
+
+    &__left {
+      padding-bottom: 60px;
+      width: 100%;
+      height: 100%;
+      // border: 1px solid #ff0000;
+      text-align: center;
+
+      h2 {
+        font-size: 2.25rem;
+
+        span {
+          @include typography_capitalized();
+          @include typography_gradient();
+        }
+
+      }
+    }
+
+    &__right {
+      width: 0;
+      height: calc(100% - 60px);
+      overflow: hidden;
+    }
+
+  }
+
+  &__insight-box {
+    height: 100%;
+    color: $hw_color_white;
+    background-color: $hw_color_gray-dark;
+    position: relative;
+
+    & > * {
+      width: calc(100% - 12px);
+    }
+
+  }
+
+  .hws-button--black {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    height: 100%;
+    transform: translateY(100%);
+
+    &__top {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: left;
+
+      & > * {
+        width: 100%;
+      }
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: $hw_color_gray-dark;
+
+        @include screen_lg_up() {
+          font-size: 2.5rem;
+        }
+
+        @include screen_md_down() {
+          font-size: 2rem;
+        }
+
+      }
+
+      h3 {
+        margin-bottom: 0.25em;
+        font-size: 1.5rem;
+
+        a {
+          @include typography_capitalized();
+          text-decoration: none;
+          color: $hw_color_gray-dark;
+          transition: color 0.25s ease;
+          padding-right: 70px;
+          position: relative;
+          display: inline-block;
+
+          &::after {
+            content: '';
+            height: 16px;
+            width: 40px;
+            position: absolute;
+            right: 10px;
+            top: 11px;
+            background-image: url(../../images/icons/right-arrow-small.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: right 0.25s ease, background-image 0.25s ease;
+          }
+
+          &:hover {
+            color: $hw_color_orange;
+
+            &::after {
+              right: 20px;
+              background-image: url(../../images/icons/right-arrow-small-orange.svg);
+            }
+          }
+
+        }
+
+      }
+    }
+
+    &__bottom {
+      background-color: $hw_color_gray-medium;
+      flex: 1;
+    }
+
+  }
+
+}
+
+.hws-featured-insight-mobile {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  
+  @include screen_md_up() {
+    display: none;
+  }
+
+  &__article {
+
+    &__top {
+
+      & > * {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: $hw_color_gray-dark;
+      }
+
+      h3 {
+        margin-bottom: 0.25em;
+        font-size: 1.2rem;
+
+        a {
+          @include typography_capitalized();
+          text-decoration: none;
+          color: $hw_color_gray-dark;
+          transition: color 0.25s ease;
+          padding-right: 50px;
+          position: relative;
+          display: inline-block;
+
+          &::after {
+            content: '';
+            height: 10px;
+            width: 26.666px;
+            position: absolute;
+            right: 10px;
+            top: 11px;
+            background-image: url(../../images/icons/right-arrow-small.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: right 0.25s ease, background-image 0.25s ease;
+          }
+
+        }
+
+      }
+    }
+
+    &__bottom {
+      background-color: $hw_color_gray-medium;
+      padding-top: 50%;
+    }
+
+  }
+
+  .hws-button--black {
+    margin-top: 30px;
+  }
+
+}

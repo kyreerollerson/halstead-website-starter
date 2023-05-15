@@ -1,0 +1,147 @@
+.hws-quiz {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1em !important;
+  }
+
+  .hws-container--large {
+
+    & > * {
+      max-width: 1000px;
+      margin-left: auto;
+    margin-right: auto;
+    }
+  }
+
+  &__form-group {
+
+    label {
+      display: block;
+
+      @include screen_lg_up() {
+        font-size: 1.5em;
+      }
+    
+      @include screen_md_only() {
+        font-size: 1.25em;
+      }
+    
+      @include screen_sm_only() {
+        font-size: 1.125em;
+      }
+    
+      @include screen_xs_down() {
+        font-size: 1em;
+      }
+
+      &[for] {
+        margin-bottom: 0.25em;
+        margin-top: 1em;
+
+        span {
+          color: #ff0000;
+        }
+      }
+
+      &:not([for]) {
+        color: $hw_color_gray-medium;
+      }
+
+    }
+
+  }
+
+  &__button-container {
+    margin-top: 50px;
+  }
+
+  &__results {
+    max-width: 100% !important;
+
+    h2 {
+      max-width: 1000px;
+    }
+
+    &__button-container {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    &__flex {
+      display: flex;
+      column-gap: 24px;
+      row-gap: 48px;
+      flex-wrap: wrap;
+
+      &[data-count="1"],
+      &[data-count="2"] {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+  
+      .hws-quiz__results__flex__single {
+
+        @include screen_lg_up() {
+          width: calc(33.33333333% - 16px);
+        }
+
+        @include screen_md_only() {
+          width: calc(50% - 12px);
+        }
+
+        @include screen_sm_down() {
+          width: 100%;
+        }
+  
+      }
+  
+  
+      &[data-count="2"] {
+  
+        .hws-pricing-columns__flex__single {
+
+          @include screen_md_up() {
+            width: calc(50% - 12px);
+          }
+
+        }
+  
+      }
+  
+      &[data-count="1"] {
+  
+       .hws-pricing-columns__flex__single {
+
+          @include screen_md_up() {
+            width: 100%;
+          }
+          
+        }
+        
+      }
+
+      &__single {
+        
+        &__image {
+          aspect-ratio: 1.5;
+          background-size: cover;
+          background-position: center;
+          margin-bottom: 1.5rem;
+        }
+
+        p {
+          margin-bottom: 1em;
+        }
+
+      }
+
+    }
+
+
+  }
+
+}

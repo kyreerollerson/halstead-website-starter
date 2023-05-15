@@ -1,0 +1,32 @@
+.animation--fade-in {
+  opacity: 0;
+}
+
+.animation--fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.animation--background-shrink {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  transform-origin: center;
+  background-size: cover;
+  transform: scale(1.5) translate(-50%, -50%);
+  z-index: 1;
+  transform-origin: left top;
+  background-position: top;
+}
+
+.animation--fade-in-overlay {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+}

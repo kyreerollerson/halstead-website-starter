@@ -1,0 +1,188 @@
+.hws-jumbotron-scrolling {
+  height: 300vh;
+  position: relative;
+  background-color: $hw_color_gray-dark;
+  color: $hw_color_white;
+  text-align: center;
+
+  // @include screen_sm_down() {
+  //   display: none;
+  // }
+
+  &__sticky {
+    overflow: hidden;
+    padding: 0 24px;
+
+    &__overlay {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    & > * {
+      z-index: 3;
+    }
+
+    &__bg-image:not([data-index="0"]) {
+      transform: translateY(100%);
+    }
+
+  }
+  
+  
+  &__icon {
+    width: 100%;
+    position: center;
+
+    @include screen_lg_up() {
+      height: 120px;
+      margin-bottom: 2rem;
+    }
+
+    @include screen_md_only() {
+      height: 100px;
+      margin-bottom: 1.8rem;
+    }
+
+    @include screen_sm_down() {
+      height: 80px;
+      margin-bottom: 1.25rem;
+    }
+
+    img {
+      width: auto;
+      top: 0;
+      display: inline-block;
+
+      @include screen_lg_up() {
+        height: 120px;
+      }
+  
+      @include screen_md_only() {
+        height: 100px;
+      }
+  
+      @include screen_sm_only() {
+        height: 80px;
+      }
+
+      @include screen_xs_down() {
+        height: 70px;
+      }
+
+      &:not([data-index="0"]) {
+        opacity: 0;
+      }
+
+    }
+
+  }
+
+  &__title {
+    margin-bottom: 1em;
+
+    @include screen_lg_up() {
+      font-size: 3rem;
+    }
+
+    @include screen_md_only() {
+      font-size: 2.5rem;
+    }
+
+    @include screen_sm_down() {
+      font-size: 2rem;
+    }
+
+    @include screen_xs_down() {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__scroll-icon-box {
+    position: absolute;
+    width: 100%;
+    bottom: 24px;
+    left: 0;
+    z-index: 4;
+
+    @include screen_md_up() {
+      height: 70px;
+    }
+
+    @include screen_sm_down() {
+      height: 50px;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+      display: inline-block;
+    }
+
+  }
+  
+}
+
+.hws-jumbotron-scrolling-mobile {
+  background-color: $hw_color_gray-dark;
+  color: $hw_color_white;
+
+  @include screen_md_up() {
+    display: none;
+  }
+
+  &__logo {
+    height: 160px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background: $hw_color_gradient;
+    mask-image: url(../../images/graphics/logo-jumbotron-mask.svg);
+    -webkit-mask-image: url(../../images/graphics/logo-jumbotron-mask.svg);
+    display: inline-block;
+    margin-bottom: 40px;
+
+    img {
+      height: 100%;
+      width: auto;
+      opacity: 0;
+    }
+  }
+
+  h1 {
+    margin-bottom: 3rem;
+    
+    .top-caption,
+    .bottom-caption {
+      display: block;
+      @include typography_capitalized();
+    }
+
+    .top-caption {
+      font-size: 1.5rem;
+    }
+
+    .bottom-caption {
+      @include typography_gradient();
+      line-height: 1.1em;
+      position: relative;
+      
+      @include screen_sm_only() {
+        font-size: 5rem;
+      }
+
+      @include screen_xs_down() {
+        font-size: 3.5rem;
+      }
+      
+      sup {
+        font-size: 25%;
+      }
+
+    }
+
+  }
+
+}

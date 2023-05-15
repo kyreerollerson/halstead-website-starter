@@ -1,0 +1,134 @@
+@import url("https://use.typekit.net/dbh8bbl.css");
+
+html, body {
+  font-family: 'europa', sans-serif;
+  font-weight: 300;
+  color: $hw_color_gray-dark;
+
+  * {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text; 
+  }
+  
+  *::selection, *::-moz-selection, *::-webkit-selection {
+    background-color: $hw_color_black !important;
+    color: $hw_color_white !important;
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul, blockquote {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include typography_capitalized();
+  font-weight: 400;
+  font-family: 'europa', sans-serif;
+  line-height: 1.3em;
+}
+
+
+h1 {
+
+  @include screen_lg_up() {
+    font-size: 4rem;
+  }
+
+  @include screen_md_only() {
+    font-size: 3rem;
+  }
+
+  @include screen_sm_only() {
+    font-size: 2rem;
+  }
+
+  @include screen_xs_down() {
+    font-size: 1.8rem;
+  }
+
+}
+
+h2 {
+
+  @include screen_lg_up() {
+    font-size: 2.75rem;
+  }
+
+  @include screen_md_only() {
+    font-size: 2rem;
+  }
+
+  @include screen_sm_only() {
+    font-size: 1.75rem;
+  }
+
+  @include screen_xs_down() {
+    font-size: 1.5rem;
+  }
+
+}
+
+h3 {
+
+  @include screen_lg_up() {
+    font-size: 2.25em;
+  }
+
+  @include screen_md_only() {
+    font-size: 1.75em;
+  }
+
+  @include screen_sm_only() {
+    font-size: 1.5rem;
+  }
+
+  @include screen_xs_down() {
+    font-size: 1.125rem;
+  }
+
+}
+
+h4 {
+
+  @include screen_lg_up() {
+    font-size: 1.75em;
+  }
+
+  @include screen_md_down() {
+    font-size: 1em;
+  }
+
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+p, ol, ul {
+
+  @include screen_lg_up() {
+    font-size: 1.5em;
+  }
+
+  @include screen_md_only() {
+    font-size: 1.25em;
+  }
+
+  @include screen_sm_only() {
+    font-size: 1.125em;
+  }
+
+  @include screen_xs_down() {
+    font-size: 1em;
+  }
+
+}

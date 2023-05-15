@@ -1,0 +1,36 @@
+.hws-gpdr {
+  position: fixed;
+  width: calc(100vw - 20px);
+  background-color: $hw_color_black;
+  left: 10px;
+  padding: 48px 24px;
+  z-index: 999999;
+  bottom: 10px;
+  transform: translateY(calc(100% + 10px));
+  transition: transform 0.25s ease;
+
+  &.active {
+    transform: none;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: $hw_color_white;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    a:not(.hws-button--white) {
+      color: $hw_color_white !important;
+      text-decoration: underline;
+      
+    }
+
+  }
+
+}

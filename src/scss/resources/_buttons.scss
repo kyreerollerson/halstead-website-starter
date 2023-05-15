@@ -1,0 +1,99 @@
+.hws-button {
+  @include typography_capitalized();
+  display: inline-block;
+  border-radius: 9999em;
+  border: 2px solid rgba(0,0,0,0);
+  transition: color 0.25s ease, background-color 0.25s ease;
+  cursor: none;
+  position: relative;
+  filter: grayscale(1);
+  text-decoration: none;
+
+  @include screen_md_up() {
+    font-size: 1.15rem;
+    padding: 0.5em 4em;
+  }
+
+  @include screen_sm_down() {
+    font-size: 0.8rem;
+    padding: 0.5em 2em;
+  }
+
+  &--small {
+    font-size: 0.8rem !important;
+  }
+
+  &[disabled] {
+    opacity: 0.25;
+  }
+
+  &__text {
+    transition: transform 0.25s ease;
+    display: inline-block;
+  }
+
+  &__arrow {
+    height: 1.25em;
+    aspect-ratio: 1;
+    display: inline-block;
+    background-image: url(../../images/icons/right-arrow-black.svg);
+    background-size: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform:translateY(-50%);
+    transform-origin: center center;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transition: opacity 0.25s ease, transform 0.25s ease, background-size 0.25s ease;
+
+    @include screen_md_up() {
+      right: 3em;
+    }
+  
+    @include screen_sm_down() {
+      right: 0.8em;
+    }
+  
+  }
+
+  @media (hover: hover) {
+    
+    &:not([disabled]):hover {
+
+      .hws-button__text {
+        transform: translateX(-1em);
+      }
+  
+      .hws-button__arrow {
+        transform: translateY(-50%);
+        opacity: 1;
+        background-size: 100% auto;
+      }
+  
+    }
+
+  }
+
+  &--white {
+    background-color: $hw_color_white;
+    color: $hw_color_black !important;
+  }
+
+  &--white-outline {
+    border-color: $hw_color_white;
+    color: $hw_color_white !important;
+
+    .hws-button__arrow {
+      filter: invert(1);
+    }
+
+  }
+
+  &--black {
+    border-color: $hw_color_black;
+    color: $hw_color_black !important;
+    background-color: rgba(0,0,0,0);
+  }
+
+}

@@ -1,0 +1,226 @@
+.hws-header {
+  height: 70px;
+  width: 100%;
+  background-color: rgba(0,0,0,0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  
+
+  &.menu-activated-ready {
+    transition: all 0.5s ease;
+  }
+
+  &.menu-activated {
+    height: 70px !important;
+    padding: 12px 24px !important;
+    background-color: rgba(0,0,0,0) !important;
+    backdrop-filter: blur(0) !important;
+    -webkit-backdrop-filter: blur(0) !important;
+
+    .hws-header__line {
+      background-color: rgba(0,0,0,0) !important;
+    }
+
+    .hws-header__logo {
+      opacity: 0;
+    }
+
+    .hws-header__start-today {
+      opacity: 0;
+    }
+
+  }
+
+  &__line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.5px;
+    background-color: rgba(0,0,0,0);
+  }
+
+  &__logo {
+    display: inline-block;
+    width: auto;
+    border-right: 1px solid rgba(0,0,0,0);
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+
+    @include screen_md_up() {
+      height: 46px;
+    }
+
+    @include screen_sm_down() {
+      height: 32px;
+    }
+    
+    img {
+      width: auto;
+      display: inline-block;
+
+      @include screen_md_up() {
+        height: 46px;
+      }
+  
+      @include screen_sm_down() {
+        height: 32px;
+      }
+
+    }
+
+  }
+
+  &--transition {
+    background-color: rgba(0,0,0,0);
+    backdrop-filter: blur(0px);
+    height: 94px;
+    padding: 24px;
+
+    .hws-header__line {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+  }
+
+  .menu-header-container {
+    flex-grow: 1;
+    width: auto;
+
+    .hws-header__nav {
+      max-width: 100%;
+      padding: 0;
+      text-align: right;
+
+      li {
+        display: inline-block;
+
+        &:not(:last-of-type) {
+          font-size: 1.1rem;
+          margin-right: 1.5em;
+        }
+
+        a {
+          @include typography_capitalized();
+          font-size: 1.1rem;
+          text-decoration: none;
+          color: $hw_color_white;
+          transition: color 0.25s ease;
+
+          &:hover {
+            color: $hw_color_salmon;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  &__menu-button {
+    @include typography_capitalized();
+    text-decoration: none !important;
+    color: $hw_color_white !important;
+    height: 20px;
+    display: none;
+
+    @include screen_sm_down() {
+      transform: scale(0.8) translate(-10px, -10px);
+    }
+
+    &__icon-box, span {
+      display: inline-block;
+      line-height: 20px;
+      vertical-align: top;
+    }
+
+    &__icon-box {
+      position: relative;
+      overflow: hidden;
+      height: 20px;
+      width: 20px;
+      margin-right: 5px;
+    }
+
+    img {
+      height: 100% !important;
+      width: auto !important;
+      position: absolute;
+      top: 0;
+      left: -6.4px;
+      max-width: 41px !important;
+    }
+
+  }
+
+  &__start-today {
+    @include typography_capitalized();
+    text-decoration: none !important;
+    color: $hw_color_white !important;
+    height: 20px;
+    position: absolute;
+    right: 24px;
+    transition: opacity 0.5s ease;
+    display: none;
+
+    @include screen_sm_down() {
+      transform: scale(0.8) translate(10px, -10px);
+    }
+
+    &__icon-box, span {
+      display: inline-block;
+      line-height: 20px;
+      vertical-align: top;
+    }
+
+    &__icon-box {
+      position: relative;
+      overflow: hidden;
+      height: 20px;
+      width: 20px;
+      margin-right: 0;
+    }
+
+    img {
+      height: 100% !important;
+      width: auto !important;
+      position: absolute;
+      top: 0;
+      max-width: 41px !important;
+    }
+
+    .extra {
+
+      @include screen_sm_down() {
+        display: none;
+      }
+
+    }
+
+  }
+
+}
+
+body.admin-bar .hws-header {
+  top: 32px;
+}
+
+.hws-overlay {
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+}

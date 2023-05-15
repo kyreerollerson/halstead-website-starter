@@ -1,0 +1,29 @@
+html, body {
+  overscroll-behavior: none;
+  cursor: none;
+  color: $hw_color_black;
+}
+
+a:focus {
+  outline: none !important;
+}
+
+body.hws--menu-open {
+  overflow: hidden;
+}
+
+* {
+  cursor: none !important;
+}
+
+.page {
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  background-color: $hw_color_white;
+  min-height: 500px;
+}
+
+#wpadminbar {
+  z-index: 9999999 !important;
+}

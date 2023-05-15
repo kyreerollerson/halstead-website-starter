@@ -1,0 +1,348 @@
+.hws-pricing-columns {
+  padding-top: 30px;
+  padding-bottom: 100px;
+
+  @include screen_sm_down() {
+    display: none;
+  }
+
+  &__label {
+    @include typography_capitalized();
+    margin-bottom: 1em;
+    max-width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+
+    @include screen_lg_up() {
+      font-size: 3rem;
+    }
+
+    @include screen_md_only() {
+      font-size: 2.2em;
+    }
+
+  }
+
+  &__monthly-yearly {
+    margin-bottom: 4em;
+    opacity: 0;
+    transform: translateY(50px);
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &__label {
+      @include typography_capitalized();
+    }
+
+    &__switch {
+      height: 36px;
+      width: 80px;
+      display: inline-block;
+      margin-left: 10px; 
+      margin-right: 10px;
+      border-radius: 9999em;
+      border: 1px solid $hw_color_gray-dark;
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 32px;
+        top: 1px;
+        left: 1px;
+        aspect-ratio: 1;
+        border-radius: 9999em;
+        background-color: $hw_color_fuchsia;
+        transition: transform 0.25s ease, background-color 0.25s ease;
+      }
+
+      &.yearly {
+
+        &::before {
+          transform: translateX(44px);
+          background-color: $hw_color_orange;
+        }
+
+      }
+
+    }
+
+  }
+
+  &__flex {
+    display: flex;
+    column-gap: 24px;
+    row-gap: 48px;
+    flex-wrap: nowrap;
+
+    &--wrap {
+      flex-wrap: wrap;
+
+      .hws-pricing-columns__flex__single {
+        width: calc(33.33333333% - 16px);
+      }
+
+    }
+
+    &__single {
+      padding: 40px 24px;
+      align-self: start;
+      opacity: 0;
+      transform: translateY(50px);
+      position: relative;
+
+      &.hws-pricing-columns__flex__single--light {
+        background-color: $hw_color_gray-light;
+      }
+
+      &.hws-pricing-columns__flex__single--dark {
+        background-color: $hw_color_gray-dark;
+        color: $hw_color_white;
+
+        &::before {
+          @include typography_capitalized();
+          background: $hw_color_gradient;
+          display: inline-block;
+          left: 0;
+          top: -25px;
+          content: 'Most Popular';
+          position: absolute;
+          padding: 10px 24px;
+        }
+
+        .hws-pricing-columns__flex__single__price {
+          
+          span {
+            @include typography_gradient();
+          }
+
+        }
+        
+      }
+
+      &__title-outer {
+        margin-bottom: 1em;
+        display: flex;
+        align-items: flex-end;
+      }
+
+      &__title {
+        @include typography_capitalized();
+        margin-bottom: 0;
+        width: 100%;
+
+        @include screen_lg_up() {
+          font-size: 1.5rem;
+        }
+
+        @include screen_md_only() {
+          font-size: 1.25em;
+        }
+
+        span {
+          @include typography_gradient();
+        }
+
+      }
+
+      &__price-caption {
+        @include typography_capitalized();
+        color: lighten($hw_color_gray-medium, 10%);
+        font-size: 1.25rem;
+        margin-bottom: -0.5em;
+      }
+
+      &__price {
+        margin-bottom: 0.5em;
+
+        @include screen_lg_up() {
+          font-size: 3rem;
+        }
+
+        @include screen_md_only() {
+          font-size: 2.2rem;
+        }
+
+      }
+
+      &__bullets {
+        list-style-type: none;
+        padding: 0;
+        // margin: 0;
+
+        &__single {
+          font-size: 1.25rem;
+          line-height: 1.4em;
+
+          &:not(:last-child) {
+            margin-bottom: 1.25em;
+          }
+        }
+      }
+
+
+    }
+
+  }
+
+
+}
+
+.hws-pricing-columns-mobile {
+  padding-top: 30px;
+  padding-bottom: 100px;
+
+  @include screen_md_up() {
+    display: none;
+  }
+
+  &__label {
+    @include typography_capitalized();
+    margin-bottom: 1.25em;
+    font-size: 2.2em;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  &__monthly-yearly {
+    margin-bottom: 4em;
+    opacity: 0;
+    transform: translateY(50px);
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &__label {
+      @include typography_capitalized();
+    }
+
+    &__switch {
+      height: 36px;
+      width: 80px;
+      display: inline-block;
+      margin-left: 10px; 
+      margin-right: 10px;
+      border-radius: 9999em;
+      border: 1px solid $hw_color_gray-dark;
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 32px;
+        top: 1px;
+        left: 1px;
+        aspect-ratio: 1;
+        border-radius: 9999em;
+        background-color: $hw_color_fuchsia;
+        transition: transform 0.25s ease, background-color 0.25s ease;
+      }
+
+      &.yearly {
+
+        &::before {
+          transform: translateX(44px);
+          background-color: $hw_color_orange;
+        }
+
+      }
+
+    }
+
+  }
+
+  &__flex {
+    display: flex;
+    column-gap: 24px;
+    row-gap: 48px;
+    flex-wrap: wrap;
+
+    &__single {
+      padding: 48px 24px;
+      flex-grow: 0;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(50px);
+
+      &.hws-pricing-columns-mobile__flex__single--light {
+        background-color: $hw_color_gray-light;
+      }
+
+      &.hws-pricing-columns-mobile__flex__single--dark {
+        background-color: $hw_color_gray-dark;
+        color: $hw_color_white;
+
+        &::before {
+          @include typography_capitalized();
+          background: $hw_color_gradient;
+          display: inline-block;
+          left: 0;
+          top: -25px;
+          content: 'Most Popular';
+          position: absolute;
+          padding: 10px 24px;
+        }
+
+        .hws-pricing-columns__flex__single__price {
+          
+          span {
+            @include typography_gradient();
+          }
+
+        }
+
+      }
+
+      &__title-outer {
+        margin-bottom: 1em;
+      }
+
+      &__title {
+        @include typography_capitalized();
+        font-size: 1.5rem;
+
+        span {
+          @include typography_gradient();
+        }
+
+      }
+
+      &__price-caption {
+        @include typography_capitalized();
+        color: lighten($hw_color_gray-medium, 10%);
+        font-size: 1.25rem;
+        margin-bottom: -0.5em;
+      }
+
+      &__price {
+        margin-bottom: 0.5em;
+        font-size: 2.2rem;
+
+      }
+
+      &__bullets {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 0;
+
+        &__single {
+          font-size: 1.25rem;
+          line-height: 1.4em;
+          margin-bottom: 1.25em;
+        }
+      }
+
+
+    }
+
+  }
+
+
+}

@@ -1,0 +1,302 @@
+.hws-staff-slider {
+  overflow: hidden;
+  padding-bottom: 36px;
+
+  @include screen_md_down() {
+    margin-top: -100px;
+  }
+
+  @include screen_sm_down() {
+    display: none;
+  }
+
+  &__inner {
+    height: 100%;
+    position: relative;
+    width: 100vw;
+    padding-top: 24px;
+
+    @include screen_xl_up() {
+      transform: translateX(-150px);
+    }
+
+    @include screen_lg_only() {
+      transform: translateX(-100px);
+    }
+
+    @include screen_md_only() {
+      transform: translateX(0);
+    }
+
+  }
+
+  &__title-container {
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    min-height: 400px;
+    z-index: 2;
+
+    @include screen_md_down() {
+      padding: 100px 0;
+    }
+    
+    &__left,
+    &__right {
+      height: 100%;
+    }
+    
+    &__left {
+      width: 50%;
+    }
+
+    &__right {
+      width: 50%;
+
+      @include screen_lg_up() {
+        padding: 24px 48px;
+      }
+
+      @include screen_md_down() {
+        padding: 24px;
+      }
+
+    }
+
+    &__title {
+      margin-bottom: 1em;
+
+      span {
+        font-size: 0.75em;
+      }
+    }
+
+  }
+
+  &__slides {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .slick-list {
+    height: 100%;
+    min-height: 400px;
+    overflow: visible;
+  }
+
+  .slick-track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+  }
+
+  &__slide {
+    max-width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+    width: 100vw !important;
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+
+    @include screen_md_down() {
+      padding: 100px 0;
+    }
+    
+    &__image,
+    &__content {
+      height: 100%;
+    }
+    
+    &__image {
+      width: 50%;
+      background-color: $hw_color_black;
+      background-size: cover;
+    }
+
+    &__content {
+      width: 50%;
+
+      @include screen_lg_up() {
+        padding: 24px 48px;
+      }
+
+      @include screen_md_down() {
+        padding: 24px;
+      }
+
+    }
+
+    &__name {
+      margin-top: 1.2em;
+      font-size: 1.5rem;
+      margin-bottom: 0.5em;
+
+      span {
+        font-size: 0.75em;
+      }
+    }
+
+    &__text {
+      color: $hw_color_gray-medium;
+    }
+
+  }
+
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    z-index: 9;
+    height: 100%;
+    top: 0;
+    font-size: 0;
+    cursor: none !important;
+    opacity: 0 !important;
+
+    @include screen_xl_up() {
+      width: 150px;
+    }
+
+    @include screen_lg_down() {
+      width: 100px;
+    }
+    
+
+  }
+
+  .slick-prev {
+
+    @include screen_xl_up() {
+      left: 150px;
+    }
+
+    @include screen_lg_only() {
+      left: 100px;
+    }
+
+    @include screen_md_only() {
+      left: 0;
+    }
+
+  }
+  
+  .slick-next {
+
+    @include screen_xl_up() {
+      right: -150px;
+    }
+
+    @include screen_lg_only() {
+      right: -100px;
+    }
+
+    @include screen_md_only() {
+      right: 0;
+    }
+
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: -64px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    left: 0;
+    list-style-type: none;
+    text-align: center;
+
+    @include screen_xl_up() {
+      transform: translateX(150px);
+    }
+
+    @include screen_lg_only() {
+      transform: translateX(100px);
+    }
+
+    @include screen_md_down() {
+      transform: translateX(0);
+      bottom: 0px;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0 15px;
+
+      button {
+        font-size: 0;
+        background-color: rgba(0,0,0,0);
+        border: 2px solid $hw_color_black;
+        height: 10px;
+        width: 10px;
+        border-radius: 999px;
+        transition: background-color 0.25s ease;
+      }
+
+      &.slick-active {
+
+        button {
+          background-color: $hw_color_black;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.hws-staff-slider-mobile {
+  padding-top: 100px;
+  padding-bottom: 20px;
+
+  @include screen_md_up() {
+    display: none;
+  }
+
+  &__title {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  &__single {
+    margin-bottom: 80px;
+
+    &__image {
+      aspect-ratio: 1;
+      width: 100%;
+      max-width: 500px;
+      background-size: cover;
+      margin-bottom: 40px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__name {
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+
+      span {
+        font-size: 0.75em;
+      }
+      
+    }
+
+    &__text {
+      margin-bottom: 0;
+      color: $hw_color_gray-medium;
+    }
+
+  }
+
+}

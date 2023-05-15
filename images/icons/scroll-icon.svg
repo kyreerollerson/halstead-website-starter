@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg vector-effect="non-scaling-stroke" id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.65 93.86">
+    <defs>
+        <style>
+          @keyframes move-dot {
+            0 {
+              transform: translate(0);
+            }
+            100% {
+              transform: translateY(40px);
+              opacity: 0;
+            }
+          }
+          .mouse-outer {
+              fill: none;
+          }
+          .dot {
+            fill: #fff;
+            transform-origin: center;
+            animation: move-dot 1.25s 0.125s infinite
+          }
+          .mouse-outer {
+            fill: none;
+            stroke: #fff;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 3px;
+          }
+        </style>
+    </defs>
+    <g id="Layer_1-2">
+        <rect class="mouse-outer" x="3.37" y="3.82" width="47.91" height="86.22" rx="23.96" ry="23.96" />
+        <circle class="dot" cx="27.32" cy="27.37" r="4" />
+        <!-- <circle class="cls-4" cx="27.32" cy="67.89" r="4.33" /> -->
+    </g>
+</svg>

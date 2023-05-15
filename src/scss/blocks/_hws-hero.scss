@@ -1,0 +1,50 @@
+.hws-hero {
+  padding-top: 70px;
+  background-color: $hw_color_black;
+  color: $hw_color_white;
+  overflow: hidden;
+  position: relative;
+
+  .hws-container--large {
+    height: 100%;
+    z-index: 2;
+    position: relative;
+  }
+
+  &__title,
+  &__subtitle {
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin-bottom: 0.2em;
+    color: rgba($hw_color_white, 0.6);
+    
+    span {
+      font-size: 0.8em;
+      display: block;
+    }
+
+  }
+
+  &__title {
+    font-weight: 300;
+  }
+
+  &__text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+}
+
+body.admin-bar .hws-hero {
+  
+  @media (min-width: 783px) {
+    padding-top: 102px;
+  }
+
+  @media (max-width: 782px) {
+    padding-top: 116px;
+  }
+
+}

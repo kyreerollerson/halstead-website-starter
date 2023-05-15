@@ -1,0 +1,123 @@
+.hws-contact-form-small {
+  padding-top: 50px;
+  padding-bottom: 120px;
+
+  h2 {
+    @include typography_capitalized();
+    max-width: 100%;
+    margin-bottom: 0.25em;
+    opacity: 0;
+      transform: translateY(50px);
+
+    @include screen_md_up() {
+      font-size: 4rem;
+    }
+
+    @include screen_sm_down() {
+      font-size: 2.5rem;
+    }
+
+  }
+
+  &__flex {
+    display: flex;
+
+    @include screen_md_up() {
+      flex-direction: row;
+      column-gap: 24px;
+    }
+
+    @include screen_sm_down() {
+      flex-direction: column;
+      row-gap: 24px;
+    }
+
+    &__left, &__right {
+      opacity: 0;
+      transform: translateY(50px);
+
+      @include screen_md_up() {
+        width: calc(50% - 12px);
+      }
+  
+      @include screen_sm_down() {
+        width: 100%;
+      }
+
+    }
+    
+  }
+
+  &__directions {
+    color: $hw_color_gray-medium;
+    margin-bottom: 1em;
+    max-width: 100%;
+
+    @include screen_md_up() {
+      font-size: 2rem;
+    }
+
+    @include screen_sm_down() {
+      font-size: 1.5rem;
+    }
+
+    strong {
+      color: $hw_color_gray-dark;
+      font-weight: 400;
+    }
+    
+  }
+
+  &__disclaimer {
+    font-size: 1.25rem;
+    position: relative;
+    max-width: 100%;
+
+    @include screen_md_up() {
+      padding-bottom: 54px;
+    }
+
+    @include screen_sm_down() {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $hw_color_gray-dark;
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: $hw_color_orange;
+      }
+
+    }
+
+    &::after {
+
+      @include screen_md_up() {
+        width: 222px;
+        height: 44px;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        content: '';
+        background-image: url(../../images/icons/right-arrow-large.svg);
+        padding-bottom: 54px;
+      }
+
+    }
+
+  }
+
+  .hws-button--black {
+    margin-top: 20px;
+    
+    @include screen_md_up() {
+      width: 100%;
+    }
+    
+  }
+
+}

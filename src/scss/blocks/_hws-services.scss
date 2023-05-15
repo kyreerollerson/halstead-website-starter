@@ -1,0 +1,247 @@
+.hws-services {
+  position: relative;
+  background-color: $hw_color_gray-faint;
+
+  @include screen_sm_down() {
+    display: none;
+  }
+  
+  &__flex {
+    display: flex;
+    column-gap: 24px;
+
+    &__left {
+      width: calc(40% - 12px);
+      // border: 1px solid #ff0000;
+      padding-right: 30px;
+    }
+
+    &__right {
+      width: calc(60% - 12px);
+      position: relative;
+    }
+
+  }
+
+  &__heading {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-left: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.25;
+    position: relative;
+
+    @include screen_xl_up() {
+      font-size: 36px;
+    }
+
+    @include screen_lg_only() {
+      font-size: 28px;
+    }
+
+    @include screen_md_only() {
+      font-size: 22px;
+    }
+
+    &__icon {
+      aspect-ratio: 1;
+      height: 0.8em;
+      position: absolute;
+      left: 0;
+      top: 0.3em;
+      font-size: inherit;
+      display: inline-block;
+      transform: translateY(2px);
+
+      &::before, &::after {
+        background-color: $hw_color_gray-dark;
+        position: absolute;
+        content: '';
+      }
+
+      &::before {
+        width: 100%;
+        height: 1px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        height: 100%;
+        width: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+    }
+
+    &:nth-child(4n) {
+
+      .hws-services__heading__icon {
+
+        &::before, &::after {
+          background-color: $hw_color_fuchsia;
+        }
+
+      }
+
+    }
+
+    &:nth-child(4n+1) {
+
+      .hws-services__heading__icon {
+
+        &::before, &::after {
+          background-color: $hw_color_pink;
+        }
+
+      }
+
+    }
+
+    &:nth-child(4n+2) {
+
+      .hws-services__heading__icon {
+
+        &::before, &::after {
+          background-color: $hw_color_salmon;
+        }
+
+      }
+
+    }
+
+    &:nth-child(4n+3) {
+
+      .hws-services__heading__icon {
+
+        &::before, &::after {
+          background-color: $hw_color_orange;
+        }
+
+      }
+
+    }
+
+  }
+
+  &__description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+}
+
+.hws-services-mobile {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $hw_color_gray-faint;
+
+  @include screen_md_up() {
+    display: none;
+  }
+
+  &__flex {
+    display: flex;
+    flex-direction: column;
+    row-gap: 68px;
+  }
+
+  .hws-services-mobile__single {
+
+    &__heading {
+      @include typography_capitalized();
+      position: relative;
+  
+      &__icon {
+        aspect-ratio: 1;
+        height: 0.8em;
+        position: relative;
+        margin-right: 12px;
+        display: inline-block;
+        transform: translateY(2px);
+  
+        &::before, &::after {
+          background-color: $hw_color_gray-dark;
+          position: absolute;
+          content: '';
+        }
+  
+        &::before {
+          width: 100%;
+          height: 1px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+  
+        &::after {
+          height: 100%;
+          width: 1px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+  
+      }
+    
+    }
+
+    &:nth-child(4n) {
+
+      .hws-services-mobile__single__heading__icon {
+
+        &::before, &::after {
+          background-color: $hw_color_fuchsia;
+        }
+
+      }
+
+    }
+
+    &:nth-child(4n+1) {
+
+      .hws-services-mobile__single__heading__icon {
+
+        &::before, &::after {
+          background-color: $hw_color_pink;
+        }
+
+      }
+
+    }
+
+    &:nth-child(4n+2) {
+
+      .hws-services-mobile__single__heading__icon {
+
+        &::before, &::after {
+          background-color: $hw_color_salmon;
+        }
+
+      }
+
+    }
+
+    &:nth-child(4n+3) {
+
+      .hws-services-mobile__single__heading__icon {
+
+        &::before, &::after {
+          background-color: $hw_color_orange;
+        }
+
+      }
+
+    }
+
+    p {
+      @include typography_wide_spaced;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+  }
+  
+}

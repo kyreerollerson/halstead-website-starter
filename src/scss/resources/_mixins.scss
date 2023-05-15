@@ -1,0 +1,39 @@
+@import '_colors.scss';
+
+@mixin typography_capitalized {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+@mixin typography_gradient {
+  background: $hw_color_gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+
+  sup {
+    color: $hw_color_fuchsia;
+    -webkit-background-clip: border-box;
+    -moz-background-clip: border-box;
+    -webkit-text-fill-color: $hw_color_fuchsia; 
+    -moz-text-fill-color: $hw_color_fuchsia;
+    background-clip: border-box;
+  }
+}
+
+@mixin accent_line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 50px;
+  height: 1px;
+  background-color: $hw_color_gray-medium;
+}
+
+@mixin typography_wide_spaced {
+  line-height: 1.76em;
+}

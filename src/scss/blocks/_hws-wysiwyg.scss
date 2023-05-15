@@ -1,0 +1,48 @@
+.hws-wysiwyg {
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  .hws-container--large {
+
+    & > * {
+      margin-bottom: 40px;
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+  
+    }
+
+    ol, ul, p {
+    
+    }
+
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+  }
+
+  &__button-container {
+    text-align: center;
+  }
+
+  &--animate {
+
+    .hws-container--large {
+
+      & > * {
+        opacity: 0;
+        transform: translateY(50px);
+    
+        &:last-child {
+          margin-bottom: 0;
+        }
+    
+      }
+      
+    }
+
+  }
+
+}

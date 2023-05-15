@@ -1,0 +1,238 @@
+.hws-list {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &__flex {
+    display: flex;
+    column-gap: 24px;
+    row-gap: 70px;
+    flex-wrap: nowrap;
+    flex-wrap: wrap;
+
+    &.hws-pricing-columns__flex--count-1,
+    &.hws-pricing-columns__flex--count-2 {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include screen_xl_up() {
+
+      &.hws-pricing-columns__flex--count-4 .hws-list__flex__single {
+        width: calc(25% - 18px);
+      }
+
+      &.hws-pricing-columns__flex--count-3 .hws-list__flex__single {
+        width: calc(33.33% - 16px);
+      }
+
+      &.hws-pricing-columns__flex--count-2 .hws-list__flex__single {
+        width: calc(50% - 24px);
+      }
+
+      &.hws-pricing-columns__flex--count-1 .hws-list__flex__single {
+        width: 100%;
+      }
+
+    }
+
+    @include screen_lg_only() {
+
+      &.hws-pricing-columns__flex--count-4 .hws-list__flex__single,
+      &.hws-pricing-columns__flex--count-3 .hws-list__flex__single {
+        width: calc(33.33% - 16px);
+      }
+
+      &.hws-pricing-columns__flex--count-2 .hws-list__flex__single {
+        width: calc(50% - 24px);
+      }
+
+      &.hws-pricing-columns__flex--count-1 .hws-list__flex__single {
+        width: 100%;
+      }
+
+    }
+
+      @include screen_md_only() {
+
+        &.hws-pricing-columns__flex--count-4 .hws-list__flex__single,
+        &.hws-pricing-columns__flex--count-3 .hws-list__flex__single,
+        &.hws-pricing-columns__flex--count-2 .hws-list__flex__single {
+          width: calc(50% - 24px);
+        }
+
+        &.hws-pricing-columns__flex--count-1 .hws-list__flex__single {
+          width: 100%;
+        }
+
+      }
+
+      @include screen_sm_only() {
+        
+        &.hws-pricing-columns__flex--count-4 .hws-list__flex__single,
+        &.hws-pricing-columns__flex--count-3 .hws-list__flex__single,
+        &.hws-pricing-columns__flex--count-2 .hws-list__flex__single {
+          width: calc(50% - 24px);
+        }
+
+        &.hws-pricing-columns__flex--count-1 .hws-list__flex__single {
+          width: 100%;
+        }
+
+      }
+
+      @include screen_xs_down() {
+        
+        .hws-list__flex__single {
+          width: 100%;
+        }
+
+      }
+
+    &__single {
+
+      &__title {
+        padding-top: 0;
+        position: relative;
+        width: 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        
+        
+        @include screen_lg_up() {
+          font-size: 2rem !important;
+        }
+
+        &::before {
+          height: 75px;
+          width: 100%;
+          content: '';
+          display: block;
+          background-position: center left;
+          background-size: 100% cover;
+          background-repeat: no-repeat;
+
+          @include screen_lg_up() {
+            height: 75px;
+            margin-bottom: 1em;
+          }
+
+          @include screen_md_down() {
+            height: 50px;
+            margin-bottom: 0.75em;
+          }
+
+        }
+      }
+
+      p {
+        color: $hw_color_gray-medium;
+        margin-bottom: 0;
+        flex-grow: 0;
+      }
+
+      &__button-container {
+        margin-top: 1.5rem;
+      }
+
+      &:nth-child(8n) {
+
+        .hws-list__flex__single__title {
+  
+          &::before {
+            background-image: url(../../images/icons/point-1.svg);
+          }
+  
+        }
+  
+      }
+  
+      &:nth-child(8n+1) {
+  
+        .hws-list__flex__single__title {
+  
+          &::before {
+            background-image: url(../../images/icons/point-2.svg);
+          }
+  
+        }
+  
+      }
+  
+      &:nth-child(8n+2) {
+  
+        .hws-list__flex__single__title {
+  
+          &::before {
+            background-image: url(../../images/icons/point-3.svg);
+          }
+  
+        }
+  
+      }
+  
+      &:nth-child(8n+3) {
+  
+        .hws-list__flex__single__title {
+  
+          &::before {
+            background-image: url(../../images/icons/point-4.svg);
+          }
+  
+        }
+  
+      }
+
+      &:nth-child(8n+4) {
+
+        .hws-list__flex__single__title {
+  
+          &::before {
+            background-image: url(../../images/icons/point-5.svg);
+          }
+  
+        }
+  
+      }
+  
+      &:nth-child(8n+5) {
+  
+        .hws-list__flex__single__title {
+  
+          &::before {
+            background-image: url(../../images/icons/point-6.svg);
+          }
+  
+        }
+  
+      }
+  
+      &:nth-child(8n+6) {
+  
+        .hws-list__flex__single__title {
+  
+          &::before {
+            background-image: url(../../images/icons/point-7.svg);
+          }
+  
+        }
+  
+      }
+  
+      &:nth-child(8n+7) {
+  
+        .hws-list__flex__single__title {
+  
+          &::before {
+            background-image: url(../../images/icons/point-8.svg);
+          }
+  
+        }
+  
+      }
+
+    }
+
+  }
+
+}

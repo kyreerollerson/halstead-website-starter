@@ -1,0 +1,46 @@
+.hws-label-text {
+  background-color: $hw_color_gray-dark;
+  color: $hw_color_white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  h2 {
+    max-width: 100%;
+    margin-bottom: 0;
+    @include screen_lg_up() {
+      font-size: 1.5rem;
+    }
+
+    @include screen_md_only() {
+      font-size: 1.25rem;
+    }
+
+    @include screen_sm_down() {
+      font-size: 1rem;
+    }
+
+  }
+
+  span {
+    display: block;
+  }
+
+  &__label {
+    @include typography_capitalized();
+    color: $hw_color_gray-light;
+  }
+
+  &__text {
+    font-size: 2em;
+
+    @include screen_sm_up() {
+      font-size: 2em;
+    }
+
+    @include screen_xs_down() {
+      font-size: 1.75em;
+    }
+
+  }
+
+}

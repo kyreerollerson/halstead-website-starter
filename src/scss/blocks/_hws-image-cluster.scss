@@ -1,0 +1,156 @@
+.hws-image-cluster {
+
+  @include screen_xl_up() {
+    padding-top: 200px;
+    margin-bottom: -200px;
+  }
+
+  @include screen_lg_only() {
+    padding-top: 160px;
+    margin-bottom: -160px;
+  }
+
+  @include screen_md_only() {
+    padding-top: 120px;
+    margin-bottom: -120px;
+  }
+
+  @include screen_md_down() {
+    display: none;
+  }
+  
+  .hws-container--large {
+    position: relative;
+  }
+
+  &__inner {
+    margin: 0 auto;
+    position: relative;
+
+    @include screen_xl_up() {
+      width: 1150px;
+      height: 966px;
+    }
+
+    @include screen_lg_only() {
+      width: 920px;
+      height: 773px;
+    }
+
+    @include screen_md_only() {
+      width: 690px;
+      height: 580px;
+    }
+
+  }
+
+  &__image-1,
+  &__image-2,
+  &__image-3 {
+    position: absolute;
+    background-size: cover;
+    
+    &.image-not-present {
+      display: none;
+    }
+    
+  }
+
+  &__image-1 {
+    position: absolute;
+    aspect-ratio: 0.75;
+    background-color: $hw_color_gray-light;
+
+    @include screen_xl_up() {
+      width: 500px;
+      top: 50px;
+    }
+
+    @include screen_lg_only() {
+      width: 400px;
+    }
+
+    @include screen_md_only() {
+      width: 300px;
+    }
+
+  }
+
+  &__image-2 {
+    position: absolute;
+    aspect-ratio: 2;
+    background-color: $hw_color_gray-medium;
+
+    @include screen_xl_up() {
+      width: 600px;
+      left: 550px;
+    }
+
+    @include screen_lg_only() {
+      width: 480px;
+      left: 440px;
+    }
+
+    @include screen_md_only() {
+      width: 360px;
+      left: 330px;
+    }
+
+  }
+
+  &__image-3 {
+    position: absolute;
+    aspect-ratio: 1.5;
+    background-color: $hw_color_gray-dark;
+
+    @include screen_xl_up() {
+      width: 700px;
+      left: 200px;
+      top: 500px;
+    }
+
+    @include screen_lg_only() {
+      width: 560px;
+      left: 160px;
+      top: 400px;
+    }
+
+    @include screen_md_only() {
+      width: 420px;
+      left: 120px;
+      top: 300px;
+    }
+
+  }
+
+}
+
+.hws-image-cluster-mobile {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @include screen_lg_up() {
+    display: none;
+  }
+
+  .hws-container--large {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 48px;
+  }
+
+  &__image-1,
+  &__image-2,
+  &__image-3 {
+    width: 100%;
+    aspect-ratio: 1.5;
+    background-size: cover;
+    
+    &.image-not-present {
+      display: none;
+    }
+
+  }
+
+}

@@ -1,0 +1,128 @@
+.hws-next-steps {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $hw_color_gray-dark;
+  color: $hw_color_white;
+
+  @include screen_sm_down() {
+    display: none;
+  }
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 4rem !important;
+  }
+
+  &__flex {
+    display: flex;
+    column-gap: 24px;
+    row-gap: 48px;
+    flex-wrap: nowrap;
+
+    &--wrap {
+      flex-wrap: wrap;
+
+      .hws-next-steps__flex__single {
+        width: calc(33.33333333% - 16px);
+      }
+
+    }
+
+    &__single {
+      color: $hw_color_white !important;
+      text-decoration: none;
+
+      &__image {
+        aspect-ratio: 1;
+        background-color: $hw_color_gray-medium;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        @include typography_capitalized();
+        padding-top: 0.8em;
+        position: relative;
+
+        @include screen_lg_up() {
+          font-size: 1.5rem;
+        }
+
+        @include screen_md_only() {
+          font-size: 1.25rem;
+        }
+
+      }
+
+      &__text {
+        color: darken( $hw_color_white, 30% );
+        margin-bottom: 0;
+      }
+
+
+    }
+
+  }
+
+}
+
+.hws-next-steps-mobile {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $hw_color_gray-dark;
+  color: $hw_color_white;
+
+  @include screen_md_up() {
+    display: none;
+  }
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 4rem !important;
+  }
+
+  &__flex {
+    display: flex;
+    column-gap: 48px;
+    row-gap: 64px;
+    flex-wrap: nowrap;
+
+    &--wrap {
+      flex-wrap: wrap;
+
+      .hws-next-steps-mobile__flex__single {
+        width: 100%;
+      }
+
+    }
+
+    &__single {
+      color: $hw_color_white !important;
+      text-decoration: none;
+
+      &__image {
+        aspect-ratio: 2;
+        background-color: $hw_color_gray-medium;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 1rem;
+      }
+
+      &__title {
+        @include typography_capitalized();
+        padding-top: 0.8em;
+        position: relative;
+        font-size: 1.25rem;
+      }
+
+      &__text {
+        color: darken( $hw_color_white, 30% );
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+
+}

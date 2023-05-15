@@ -1,0 +1,25 @@
+.hws-transition {
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+
+    @include screen_xl_up() {
+      height: 200px;
+    }
+
+    @include screen_lg_only() {
+      height: 160px;
+    }
+
+    @include screen_md_only() {
+      height: 120px;
+    }
+
+    @include screen_sm_down() {
+      height: 80px;
+    }
+
+  }
+
+}

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 25">
+  <style>
+    .lion-menu-button-cls-1 {
+      fill: rgba(0,0,0,0);
+    }
+    .lion-menu-button-cls-2 {
+      fill: #fff;
+    }
+    #lmb-bar-1,
+    #lmb-bar-3 {
+      transform-origin: center;
+    }
+    @keyframes on-bar-1-large-slide {
+      to {
+        transform: translateX(-8px);
+      }
+    }
+    @keyframes on-bar-1-small-disappear {
+      to {
+        opacity: 0;
+      }
+    }
+    @keyframes on-bar-2-disappear {
+      to {
+        opacity: 0;
+      }
+    }
+    @keyframes on-bar-3-large-slide {
+      from {
+        transform: translateX(0px);
+      }
+      to {
+        transform: translateX(8px);
+      }
+    }
+    @keyframes on-bar-3-small-disappear {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+    @keyframes on-bar-1-large-center {
+      from {
+        transform: translate(-8px, 0px);
+      }
+      to {
+        transform: translate(-8px, 11px);
+      }
+    }
+    @keyframes on-bar-3-large-center {
+      to {
+        transform: translate(8px, -11px);
+      }
+    }
+    @keyframes on-bar-1-rotate {
+      to {
+        transform: rotate(-405deg);
+      }
+    }
+    @keyframes on-bar-3-rotate {
+      to {
+        transform: rotate(405deg);
+      }
+    }
+    /* active */
+    #lmb-bar-1-large {
+      animation: on-bar-1-large-slide 0.125s 0s forwards, on-bar-1-large-center 0.125s 0.125s forwards;
+    }
+    #lmb-bar-1 {
+      animation: on-bar-1-rotate 0.125s 0.375s forwards;
+    }
+    #lmb-bar-1-small {
+      animation: on-bar-1-small-disappear 0s 0.125s forwards;
+    }
+    #lmb-bar-2 {
+      animation: on-bar-2-disappear 0.125s forwards;
+    }
+    #lmb-bar-3-large {
+      animation: on-bar-3-large-slide 0.125s 0s forwards, on-bar-3-large-center 0.125s 0.125s forwards;
+    }
+    #lmb-bar-3 {
+      animation: on-bar-3-rotate 0.125s 0.375s forwards;
+    }
+    #lmb-bar-3-small {
+      animation: on-bar-3-small-disappear 0s 0.125s forwards;
+    }
+  </style>
+  <g id="lmb-bar-1">
+    <rect id="lmb-bar-1-rect" class="lion-menu-button-cls-1" x="0" y="0" width="41" height="25"/>
+    <rect id="lmb-bar-1-large" class="lion-menu-button-cls-2" x="16" y="0" width="25" height="3" rx="1.5"/>
+    <rect id="lmb-bar-1-small" class="lion-menu-button-cls-2" x="8" y="0" width="5" height="3" rx="1.5"/>
+  </g>
+  <rect id="lmb-bar-2" class="lion-menu-button-cls-2" x="8" y="11" width="25" height="3" />
+  <g id="lmb-bar-3">
+    <rect id="lmb-bar-3-rect" class="lion-menu-button-cls-1" x="0" y="0" width="41" height="25"/>
+    <rect id="lmb-bar-3-large" class="lion-menu-button-cls-2" y="22" width="25" height="3" rx="1.5"/>
+    <rect id="lmb-bar-3-small" class="lion-menu-button-cls-2" x="28" y="22" width="5" height="3" rx="1.5"/>
+  </g>
+</svg>
